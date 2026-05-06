@@ -7,10 +7,9 @@ WORKDIR /app
 COPY . .
 
 # Install necessary dependencies
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
     gcc \
     libffi-dev \
-    musl-dev \
     ffmpeg \
     aria2 \
     make \
