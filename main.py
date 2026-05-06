@@ -37,7 +37,7 @@ getstatusoutput(f"wget {photo1} -O 'photo.jpg'")
 photo = "photo.jpg"
 
 
-token_cp = 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOjUwLCJzb3VyY2VfYXBwIjoiY2xhc3NwbHVzIiwic2Vzc2lvbl9pZCI6ImMxNDEwOWNkLTMwYjAtNGJhYS1iMTEzLTBmMWFmMzQyMGYwYiIsInZpc2l0b3JfaWQiOiIxY2I4OTEwZS1hYTItNDA0MS04NjBmLThiNzhiZmM5Y2I1ZSIsImNyZWF0ZWRfYXQiOjE3NzgwNjAzMzM3NzcsImlhdCI6MTc3ODA2MDMzMywiZXhwIjoxNzc5MzU2MzMzfQ.twwr8vDu96GGX33FZuvWJirWN5npA6Mk9RcxZmEK7wU8XWneu95MZAkyulWx0Wtb'
+token_cp = 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJzb3VyY2UiOjUwLCJzb3VyY2VfYXBwIjoiY2xhc3NwbHVzIiwic2Vzc2lvbl9pZCI6IjliOWRlYjNiLTc3YzMtNDZiZS05MWVmLTlmN2MxZGQ2NDJmYSIsInZpc2l0b3JfaWQiOiI3YzEwOGFlNy0yMjliLTRlNTEtOTcxYi0zM2U2YWM0ZDBmYTYiLCJjcmVhdGVkX2F0IjoxNzc4MDY5OTAyNDA1LCJuYW1lIjoiRUFEIE9ubGluZSBDbGFzc2VzIiwib3JnX2NvZGUiOiJlYWQiLCJvcmdfaWQiOjEyODYsInBob25lIjoiOTE4MjEwMTY5OTUxIiwic291cmNlX3VzZXJfaWQiOiI0ODY3OTIxNCIsInVzZXJfdHlwZSI6MSwiZW1haWwiOiJqZXVwcGNsNDZAZ21haWwuY29tIiwiaXNfdXNlcmlkX2V2ZW4iOnRydWUsImNhdGVnb3J5IjoiR292dCIsImNvaG9ydCI6IkRhZGR5IEZIIiwiaXNfc3RvcmUiOjEsImlhdCI6MTc3ODA2OTkwMywiZXhwIjoxNzc5MzY1OTAzfQ.u6ANRimN6QxuNof9eC3_VR5iQonRecV-50n-g2-NPBF6TdOc-wA7Vyt3LjQWX_UU'
 
 @bot.on_message(filters.command(["start"]) & filters.user(owner_id))
 async def account_login(bot: Client, m: Message):
@@ -62,7 +62,6 @@ async def account_login(bot: Client, m: Message):
         await m.reply_text("Please send TXT file only.")
         return
 
-    y = await input.download()
     y = await input.download()
     file_name, ext = os.path.splitext(os.path.basename(y))  # Extract filename & extension
     x = y  # No decryption, use the file as is
