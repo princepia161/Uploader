@@ -51,7 +51,10 @@ async def restart_handler(_, m):
 @bot.on_message(filters.command(["txt"]))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("**Please Send TXT file for download**")
-    input: Message = await bot.listen(editable.chat.id)
+    input: Message = await bot.listen(
+    editable.chat.id,
+    filters=filters.document
+)
     y = await input.download()
     file_name, ext = os.path.splitext(os.path.basename(y))  # Extract filename & extension
     x = y  # No decryption, use the file as is
